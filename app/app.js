@@ -6,7 +6,7 @@
 (function () {
     "use strict";
 
-    var app = angular.module('sonora', ['ngRoute', 'firebase']);
+    var app = angular.module('sonora', ['ngRoute']);
 
     app.config(function ($routeProvider) {
 
@@ -15,13 +15,19 @@
 
         $routeProvider
             .when('/', {
-                template: '',
+                template: '<h2>This is the HOME VIEW</h2>',
                 resolve: function () {
                     //
                 }
             })
             .when('/login', {
-                template: '',
+                template: '<h2>This is the LOGIN VIEW</h2>',
+                resolve: function () {
+                    //
+                }
+            })
+            .when('/create', {
+                template: '<h2>Create a set</h2>',
                 resolve: function () {
                     //
                 }
