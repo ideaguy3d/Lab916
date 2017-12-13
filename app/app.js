@@ -15,7 +15,7 @@
 
         $routeProvider
             .when('/', {
-                template: '<h2>This is the HOME VIEW</h2>',
+                templateUrl: 'app/landing/view.landing.html',
                 resolve: function () {
                     //
                 }
@@ -27,7 +27,7 @@
                 }
             })
             .when('/create', {
-                template: '<h2>Create a set</h2>',
+                template: '<create-set></create-set>',
                 resolve: function () {
                     //
                 }
