@@ -14,7 +14,7 @@
         // build stuff !
 
         $routeProvider
-            .when('/', {
+            .when('/home', {
                 templateUrl: 'app/landing/view.landing.html',
                 resolve: function () {
                     //
@@ -31,6 +31,9 @@
                 resolve: function () {
                     //
                 }
+            })
+            .otherwise({
+                redirectTo: '/home'
             });
     })
 })();
