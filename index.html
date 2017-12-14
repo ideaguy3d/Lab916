@@ -2,7 +2,7 @@
 <html lang="en" ng-app="sonora">
 <head>
     <meta charset="UTF-8">
-    <title>Julius Sonora Hack A Thon</title>
+    <title>Lab 916</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -35,6 +35,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- Left side of nav -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -43,22 +44,46 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" ng-href="#!/home" ng-click="showHero()"><b>Lab916</b></a>
+            <a class="navbar-brand" ng-href="#!/home" ng-click="showHero()"><img src="img/logo.png" alt=""></a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
+
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li ng-click="hideHero()"><a ng-href="#!/create">
-                    <i class="fa fa-plus-circle"></i> Create</a></li>
+                <li ng-click="hideHero()">
+                    <a ng-href="#!/create">ABOUT US</a>
+                </li>
             </ul>
 
             <!-- Left side of nav -->
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-left">
                 <li ng-click="hideHero()">
-                    <a href="#!/login" >Login</a></li>
+                    <a href="#!/login">CASE STUDIES</a>
+                </li>
                 <li ng-click="hideHero()">
-                    <a href="#!/login"><b>Sign Up</b></a></li>
+                    <a href="#!/login">BLOG</a>
+                </li>
+                <li ng-click="hideHero()">
+                    <a href="#!/login">CONTACT</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right list-inline">
+                <li class="list-inline-item">
+                    <a href="#">
+                        <i class="fa fa-facebook fa-fw"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                        <i class="fa fa-twitter fa-fw"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                        <i class="fa fa-linkedin fa-fw"></i>
+                    </a>
+                </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -80,7 +105,57 @@
 
 <ng-view></ng-view>
 
-
+<!-- Footer -->
+<footer class="footer" style="background-image: url('img/sacramento.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 footer-contact-details">
+                <h4><i class="fa fa-mail-reply"></i> Subscribe to Lab916</h4>
+                <a href="#">Nothing is impossible, the word itself says “Im possible”! —Audrey Hepburn</a>
+            </div>
+            <div class="col-md-2 footer-contact-details">
+                <a href="#">916-123-4567</a><a href="#">info@lab916.com</a><a href="#">FIND A SERVICE</a>
+            </div>
+            <div class="col-md-2 footer-contact-details">
+                <a href="#">CONTACT US</a>
+                <a href="#">ORDERING & PAYMENT</a>
+                <a href="#">SHIPPING</a>
+                <a href="#">RETURNS</a>
+                <a href="#">FAQ</a>
+                <a href="#">SIZING GUIDE</a>
+            </div>
+            <div class="col-md-2 footer-contact-details">
+                <a href="#">WORK WITH US</a>
+                <a href="#">PRIVACY POLICY</a>
+                <a href="#">TERMS & CONDITIONS</a>
+                <a href="#">PRESS ENQUIRIES</a>
+            </div>
+        </div>
+        <!-- Social Buttons -->
+        <div class="row footer-social text-center">
+            <div class="col-lg-12">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fa fa-facebook fa-fw fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fa fa-twitter fa-fw fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fa fa-linkedin fa-fw fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright text-center">&copy; Lab916 Sacramento, California</p>
+    </div>
+</footer>
 <!--------------------------------------->
 <!-- JavaScript Frameworks & Libraries -->
 <!--------------------------------------->

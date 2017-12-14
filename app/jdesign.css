@@ -42,7 +42,7 @@ input.form-control:focus {
     transition: all 0.5s;
 }
 .btn-primary {
-    color: white;
+    color: #434343;
     background-color: #fbec80;
     border-color: #fbec80;
     -webkit-transition: all 0.5s;
@@ -56,7 +56,7 @@ input.form-control:focus {
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-    color: white;
+    color: #fbec80;
     background-color: #434343;
     border-color: #fbec80;
 }
@@ -544,6 +544,13 @@ aside.cta-quote span.quote {
 .lab-mid-yellow-bg {
     background-color: #fbec80;
     padding: 8px;
+}
+
+.lab-row-flex {
+    display: -webkit-flex; /* Safari */
+    -webkit-align-items: baseline; /* Safari 7.0+ */
+    display: flex;
+    align-items: baseline;
 }
 
 .lab-col {
@@ -1096,7 +1103,7 @@ form .row:first-child .floating-label-form-group {
     border-top: 1px solid #e1e1e1;
 }
 footer.footer {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1105,10 +1112,16 @@ footer.footer {
     padding: 50px 0 20px;
 }
 footer.footer a {
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
+    display: block;
+    text-align: left;
+    margin: 12px;
+    padding: 4px;
 }
 footer.footer a:hover {
     color: white;
+    background-color: rgba(0,0,0,0.7);
+
 }
 footer.footer p {
     font-size: 22px;

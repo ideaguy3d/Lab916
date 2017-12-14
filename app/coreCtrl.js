@@ -23,7 +23,10 @@
             angular.element('header.video').show();
         };
 
-        var hero = $location.url() === '/';
+        var hero = $location.url() === '/home';
+        console.log("jha - $location.url() = ");
+        console.log($location.url());
+        console.log(typeof $location.url());
 
         if(hero) {
             $('header.video').show();

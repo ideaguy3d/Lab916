@@ -21,7 +21,7 @@
                 }
             })
             .when('/login', {
-                template: '<h2>This is the LOGIN VIEW</h2>',
+                template: '<h2>This will be a new page</h2>',
                 resolve: function () {
                     //
                 }
