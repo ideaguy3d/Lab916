@@ -3,37 +3,47 @@ html,
 body {
     height: 100%;
 }
+
 .img-centered {
     margin: 0 auto;
 }
+
 .content-row {
     margin-top: 30px;
 }
+
 section {
     padding: 100px 0;
 }
+
 .bg-gray {
     background-color: #f5f5f5;
 }
+
 .bg-dark {
     color: white;
     background-color: #222;
 }
+
 @media (max-width: 767px) {
     section {
         padding: 75px 0;
     }
 }
+
 .owl-theme .owl-controls .owl-page span {
     background: rgba(34, 34, 34, 0.5);
 }
+
 input.form-control {
     border-radius: 0 !important;
 }
+
 input.form-control:focus {
     border-color: #0A8FD5;
     box-shadow: none;
 }
+
 .btn,
 .input-group-btn {
     border-radius: 0 !important;
@@ -41,6 +51,7 @@ input.form-control:focus {
     -moz-transition: all 0.5s;
     transition: all 0.5s;
 }
+
 .btn-primary {
     color: #434343;
     background-color: #fbec80;
@@ -321,6 +332,7 @@ header .brand-name {
 
 header.lab-hero-landing {
     background-image: url(../img/graph-bg.png);
+    top: -55px;
 }
 
 header .brand-name-subtext {
