@@ -2,18 +2,18 @@
 // www.julius3d.com
 
 $jblack: #434343;
+$lab-ylight: #fbed80;
+$lab-ymed: #eccf2f;
 
 .j-container {
-
+  background-color: $lab-ylight;
 }
-
 
 @media screen and (min-width: 768px) {
   .navbar {
     border-radius: 0;
   }
 }
-
 
 .navbar {
   margin-bottom: 0;

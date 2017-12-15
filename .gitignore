@@ -1,7 +1,4 @@
-_jref
 .idea
 **/*.xml
 node_modules
-bower_components
-vendor
 

@@ -21,14 +21,12 @@
     <link rel="stylesheet" href="app/jdesign.css">
     <link rel="stylesheet" href="app/jstyles.css">
 
-
     <style type="text/css">
         [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
             display: none !important;
         }
     </style>
 </head>
-
 
 <body id="page-top" ng-cloak ng-controller="CoreCtrl">
 
@@ -44,9 +42,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" ng-href="#!/home" ng-click="showHero()"><img src="img/logo.png" alt=""></a>
+            <a class="navbar-brand" ng-href="#!/home" ng-click="showHero()">Lab916</a>
         </div>
 
+        <form class="navbar-form navbar-left">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default lab-search-btn">Search</button>
+        </form>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -88,20 +92,6 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-
-
-<!-- Hero -->
-<header class="video">
-    <div class="overlay"></div>
-    <div class="intro-content">
-        <!--<img src="img/agency/profile.svg" class="img-responsive img-centered" alt="">-->
-        <div class="brand-name">Lab916</div>
-    </div>
-    <div class="scroll-down page-scroll" ng-click="hideHero()">
-        <a href="#!/create"><i class="fa fa-plus-circle fa-4x"></i></a>
-    </div>
-</header>
-
 
 <ng-view></ng-view>
 

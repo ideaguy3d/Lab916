@@ -170,12 +170,15 @@ hr.colored {
         margin: 20px 0 20px auto;
     }
 }
+
 .text-primary {
     color: #0A8FD5;
 }
+
 .navbar-fixed-top {
     margin-bottom: 0;
 }
+
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus,
@@ -186,22 +189,27 @@ hr.colored {
     background-color: white;
     border-radius: 0;
 }
+
 .navbar-default {
-    background-color: #eccf2f;
+    background-color: rgba(255,255,255,0);
 }
+
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
     border-color: rgba(255, 255, 255, 0.5);
 }
+
 .navbar-inverse {
     background-color: #222;
 }
+
 .navbar-default,
 .navbar-inverse {
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-.navbar-default .navbar-toggle,
+
+.nav bar-default .navbar-toggle,
 .navbar-inverse .navbar-toggle {
     color: white;
     font-size: 14px;
@@ -216,7 +224,7 @@ hr.colored {
 }
 .navbar-default .navbar-brand,
 .navbar-inverse .navbar-brand {
-    color: white;
+    color: #434343;
     opacity: 1;
     text-decoration: none;
     -webkit-transition: all 0.5s;
@@ -227,24 +235,28 @@ hr.colored {
     text-transform: uppercase;
     font-size: 24px;
 }
+
 .navbar-default .navbar-brand:hover,
 .navbar-inverse .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-inverse .navbar-brand:focus {
     opacity: 1;
 }
+
 .navbar-default .navbar-brand img,
 .navbar-inverse .navbar-brand img {
     margin-top: -10px;
     height: 40px;
 }
+
 .navbar-default .navbar-nav > li > a,
 .navbar-inverse .navbar-nav > li > a {
-    color: white;
+    color: grey;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:hover {
     color: rgba(255, 255, 255, 0.5);
+    background-color: #434343;
 }
 @media (min-width: 768px) {
     .navbar-default .navbar-nav > .active > a,
@@ -305,6 +317,10 @@ header .brand-name {
     text-transform: uppercase;
     font-weight: 900;
     margin-top: 15px;
+}
+
+header.lab-hero-landing {
+    background-image: url(../img/graph-bg.png);
 }
 
 header .brand-name-subtext {
@@ -374,8 +390,8 @@ header .scroll-down .btn:hover {
         line-height: 30px;
     }
     header img {
-        max-width: 250px;
-        max-height: 250px;
+        max-width: 560px;
+        max-height: 560px;
     }
 }
 
@@ -1179,6 +1195,9 @@ footer.footer .copyright p.small {
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 1px;
+}
+.btn.lab-search-btn {
+    padding: 6px 8px;
 }
 .btn:focus,
 .btn:active,

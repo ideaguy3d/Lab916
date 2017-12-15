@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sonora">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 916</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Vendor CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+    <link href="vendor/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css">
+    <link href="vendor/owl-carousel/owl.theme.css" rel="stylesheet" type="text/css">
+    <link href="vendor/owl-carousel/owl.transitions.css" rel="stylesheet" type="text/css">
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+    <link href="vendor/formstone/background.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="app/jdesign.css">
+    <link rel="stylesheet" href="app/jstyles.css">
+
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body id="page-top" ng-cloak ng-controller="CoreCtrl">
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- Left side of nav -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ng-href="#!/home" ng-click="showHero()"><img src="img/logo.png" alt=""></a>
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ng-click="hideHero()">
+                    <a ng-href="#!/create">ABOUT US</a>
+                </li>
+            </ul>
+
+            <!-- Left side of nav -->
+            <ul class="nav navbar-nav navbar-left">
+                <li ng-click="hideHero()">
+                    <a href="#!/login">CASE STUDIES</a>
+                </li>
+                <li ng-click="hideHero()">
+                    <a href="#!/login">BLOG</a>
+                </li>
+                <li ng-click="hideHero()">
+                    <a href="#!/login">CONTACT</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right list-inline">
+                <li class="list-inline-item">
+                    <a href="#">
+                        <i class="fa fa-facebook fa-fw"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                        <i class="fa fa-twitter fa-fw"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                        <i class="fa fa-linkedin fa-fw"></i>
+                    </a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!-- Hero -->
+<header class="video">
+    <div class="overlay"></div>
+    <div class="intro-content">
+        <!--<img src="img/agency/profile.svg" class="img-responsive img-centered" alt="">-->
+        <div class="brand-name">Lab916</div>
+    </div>
+    <div class="scroll-down page-scroll" ng-click="hideHero()">
+        <a href="#!/create"><i class="fa fa-plus-circle fa-4x"></i></a>
+    </div>
+</header>
+
+
+<ng-view></ng-view>
+
+<!-- Footer -->
+<footer class="footer" style="background-image: url('img/sacramento.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 footer-contact-details">
+                <h4><i class="fa fa-mail-reply"></i> Subscribe to Lab916</h4>
+                <a href="#">Nothing is impossible, the word itself says “Im possible”! —Audrey Hepburn</a>
+            </div>
+            <div class="col-md-2 footer-contact-details">
+                <a href="#">916-123-4567</a><a href="#">info@lab916.com</a><a href="#">FIND A SERVICE</a>
+            </div>
+            <div class="col-md-2 footer-contact-details">
+                <a href="#">CONTACT US</a>
+                <a href="#">ORDERING & PAYMENT</a>
+                <a href="#">SHIPPING</a>
+                <a href="#">RETURNS</a>
+                <a href="#">FAQ</a>
+                <a href="#">SIZING GUIDE</a>
+            </div>
+            <div class="col-md-2 footer-contact-details">
+                <a href="#">WORK WITH US</a>
+                <a href="#">PRIVACY POLICY</a>
+                <a href="#">TERMS & CONDITIONS</a>
+                <a href="#">PRESS ENQUIRIES</a>
+            </div>
+        </div>
+        <!-- Social Buttons -->
+        <div class="row footer-social text-center">
+            <div class="col-lg-12">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fa fa-facebook fa-fw fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fa fa-twitter fa-fw fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fa fa-linkedin fa-fw fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="copyright text-center">&copy; Lab916 Sacramento, California</p>
+    </div>
+</footer>
+<!--------------------------------------->
+<!-- JavaScript Frameworks & Libraries -->
+<!--------------------------------------->
+<!--<script type="text/javascript" src="vendor/jq2/jquery-2.1.1.min.js"></script>-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<!--<script src="vendor/classie.js"></script>-->
+<!--<script src="vendor/cbpAnimatedHeader.js"></script>-->
+
+<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="vendor/owl-carousel/owl.carousel.js"></script>
+<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="vendor/formstone/core.js"></script>
+<script src="vendor/formstone/transition.js"></script>
+<script src="vendor/formstone/background.js"></script>
+<script src="vendor/mixitup/jquery.mixitup.js"></script>
+<script src="vendor/wow/wow.min.js"></script>
+
+<script type="text/javascript" src="vendor/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+
+
+<!----------------------->
+<!-- Custom JavaScript -->
+<!----------------------->
+<script type="text/javascript" src="app/jdesign.js"></script>
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/coreCtrl.js"></script>
+<script type="text/javascript" src="app/create/comp.create.js"></script>
+
+</body>
+</html>
