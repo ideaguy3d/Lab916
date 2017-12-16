@@ -19,6 +19,14 @@
   left: -20px;
   width: 100%; }
 
+.lab-imgab-right1 {
+  position: absolute;
+  left: 20px;
+  width: 100%; }
+
+.lab-pad-left1 {
+  padding-left: 30px; }
+
 .gradient_lightgrey {
   background: linear-gradient(45deg, #cccccc 0%, rgba(204, 204, 204, 0.34) 44%, rgba(255, 255, 255, 0.07) 62%, rgba(255, 255, 255, 0.03) 65%, rgba(255, 255, 255, 0.01) 66%);
   /* W3C */
