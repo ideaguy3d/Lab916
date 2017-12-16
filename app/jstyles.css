@@ -14,6 +14,11 @@
 .lab-margin-1 {
   margin: 8px; }
 
+.lab-imgab-left1 {
+  position: absolute;
+  left: -20px;
+  width: 100%; }
+
 .gradient_lightgrey {
   background: linear-gradient(45deg, #cccccc 0%, rgba(204, 204, 204, 0.34) 44%, rgba(255, 255, 255, 0.07) 62%, rgba(255, 255, 255, 0.03) 65%, rgba(255, 255, 255, 0.01) 66%);
   /* W3C */
