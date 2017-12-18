@@ -4,6 +4,9 @@
 $jblack: #434343;
 $lab-ylight: #fbed80;
 $lab-ymed: #eccf2f;
+$lab-font-main: "Georgia";
+$lab-height5: 500px;
+
 
 .j-container {
   background-color: $lab-ylight;
@@ -31,18 +34,22 @@ $lab-ymed: #eccf2f;
   position: absolute;
   left: -20px;
   //top: 70px;
-  width: 100%;
+  width: 600px;
 }
 
 .lab-imgab-right1 {
   position: absolute;
   left: 20px;
   //top: 70px;
-  width: 100%;
+  width: 600px;
 }
 
 .lab-pad-left1 {
   padding-left: 30px;
+}
+
+.lab-mh5 {
+  min-height: $lab-height5;
 }
 
 

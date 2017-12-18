@@ -15,7 +15,7 @@
 
         $routeProvider
             .when('/home', {
-                templateUrl: 'app/landing/view.landing.html',
+                templateUrl: 'app/landing/view.landing-v2.html',
                 resolve: function () {
                     //
                 }

@@ -17,15 +17,18 @@
 .lab-imgab-left1 {
   position: absolute;
   left: -20px;
-  width: 100%; }
+  width: 600px; }
 
 .lab-imgab-right1 {
   position: absolute;
   left: 20px;
-  width: 100%; }
+  width: 600px; }
 
 .lab-pad-left1 {
   padding-left: 30px; }
+
+.lab-mh5 {
+  min-height: 500px; }
 
 .gradient_lightgrey {
   background: linear-gradient(45deg, #cccccc 0%, rgba(204, 204, 204, 0.34) 44%, rgba(255, 255, 255, 0.07) 62%, rgba(255, 255, 255, 0.03) 65%, rgba(255, 255, 255, 0.01) 66%);
