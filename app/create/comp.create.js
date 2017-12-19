@@ -6,7 +6,7 @@
 (function(){
     "use strict";
 
-    var app = angular.module('sonora'),
+    var app = angular.module('lab916'),
         componentId = 'createSet';
 
     app.component(componentId, {

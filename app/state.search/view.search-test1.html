@@ -1,0 +1,46 @@
+<div class="card checkinslist container">
+    <div class="search cf">
+        <h2>Search test</h2>
+        <p>{{message}}</p>
+        <!-- Search - check in -->
+        <input type="text" ng-model="query" placeholder="Search for service">
+        <!-- search form group -->
+        <div class="formgroup">
+            <span class="label">by:</span>
+            <select ng-model="order">
+                <option value="firstname">First Name</option>
+                <option value="lastname">Last Name</option>
+                <option value="date">Date</option>
+            </select>
+        </div>
+        <!-- order-by and query form group -->
+        <div class="formgroup">
+            <input id="dirascending" type="radio" name="direction" ng-model="direction">
+            <label for="dirascending">asc</label>&nbsp;
+
+            <input id="dirdescending" type="radio" name="direction" ng-model="direction" value="reverse">
+            <label for="dirdescending">desc</label>
+        </div>
+
+        <div ng-show="currentUser" class="buttons cf">
+            <button class="btn btn-pick" ng-hide="recordId" ng-click="pickRandom()">Pick Random</button>
+            <button class="btn btn-pick" ng-show="recordId" ng-click="recordId=''">Reset</button>
+        </div>
+    </div>
+
+    <!-- user list -->
+    <ul class="userlist cf">
+        <!---------------------------->
+        <!------ outer FOR-LOOP ------>
+        <!---------------------------->
+        <li id=" ng-repeat= elem in dataSet1" ng-repeat="elem in dataSet1 | orderBy: order:direction | filter: {$id: recordId, $: query}">
+            <div class="checkin">
+                <!-- data output -->
+                <div class="info">
+                    <h4>{{ elem.firstname }} {{ elem.lastname }}</h4>
+                    <div class="data">{{ elem.date | date: "MMM d,yy h:mm a" }}</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

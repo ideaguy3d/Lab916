@@ -2,11 +2,10 @@
  * Created by julius on 6/24/2017.
  */
 
-
 (function(){
     "use strict";
 
-    var app = angular.module('sonora'),
+    var app = angular.module('lab916'),
         controllerId = 'CoreCtrl';
 
     app.controller(controllerId, ['$scope', '$location', CoreCtrlClass]);
@@ -15,11 +14,13 @@
 
         $scope.showLanding = true;
 
-        $scope.hideHero = function () {
+        $scope.ccHideHero = function () {
+            console.log("JHA - ccHideHero() invoked");
             angular.element('header.video').hide();
         };
 
-        $scope.showHero = function () {
+        $scope.ccShowHero = function () {
+            console.log("JHA - ccShowHero() invoked!!");
             angular.element('header.video').show();
         };
 

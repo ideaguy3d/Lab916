@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="sonora">
+<html lang="en" ng-app="lab916">
 <head>
     <meta charset="UTF-8">
     <title>Lab 916</title>
@@ -33,7 +33,7 @@
 <nav id="lab-nav" class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <!-- Left side of nav -->
+        <!-- Logo side of nav -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -42,7 +42,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" ng-href="#!/home" ng-click="showHero()">Lab916</a>
+            <a class="navbar-brand" ng-href="#!/home" ng-click="ccShowHero()">Lab916</a>
         </div>
 
         <form class="navbar-form navbar-left">
@@ -53,22 +53,27 @@
         </form>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <!-- future dashboard link for logged in users -->
             <ul class="nav navbar-nav">
-                <li ng-click="hideHero()">
-                    <a ng-href="#!/create">ABOUT US</a>
+                <li ng-click="ccHideHero()">
+                    <a ng-href="#!/create">DASHBOARD</a>
                 </li>
             </ul>
 
             <!-- Left side of nav -->
             <ul class="nav navbar-nav navbar-left">
-                <li ng-click="hideHero()">
-                    <a href="#!/login">CASE STUDIES</a>
+                <li ng-click="ccHideHero()">
+                    <a ng-href="#!/about-us">ABOUT US</a>
                 </li>
-                <li ng-click="hideHero()">
-                    <a href="#!/login">BLOG</a>
+                <li ng-click="ccHideHero()">
+                    <a ng-href="#!/case-studies">CASE STUDIES</a>
                 </li>
-                <li ng-click="hideHero()">
-                    <a href="#!/login">CONTACT</a>
+                <li ng-click="ccHideHero()">
+                    <!--<a href="http://lab916.wpengine.com">BLOG</a>-->
+                    <a ng-href="#!/blog">BLOG</a>
+                </li>
+                <li ng-click="ccHideHero()">
+                    <a ng-href="#!/contact-us">CONTACT</a>
                 </li>
             </ul>
 
@@ -175,6 +180,7 @@
 <script type="text/javascript" src="app/app.js"></script>
 <script type="text/javascript" src="app/coreCtrl.js"></script>
 <script type="text/javascript" src="app/create/comp.create.js"></script>
+<script type="text/javascript" src="app/state.search/ctrl.search-test1.js"></script>
 
 </body>
 </html>
