@@ -3,8 +3,10 @@
         <h2>Search test</h2>
         <p>{{message}}</p>
         <!-- Search - check in -->
-        <input type="text" ng-model="query" placeholder="Search for service">
-        <!-- search form group -->
+        <div class="form-group">
+            <input type="text" ng-model="query" class="form-control" placeholder="Search">
+        </div>
+        <!-- filter - form group -->
         <div class="formgroup">
             <span class="label">by:</span>
             <select ng-model="order">
@@ -21,19 +23,16 @@
             <input id="dirdescending" type="radio" name="direction" ng-model="direction" value="reverse">
             <label for="dirdescending">desc</label>
         </div>
-
-        <div ng-show="currentUser" class="buttons cf">
-            <button class="btn btn-pick" ng-hide="recordId" ng-click="pickRandom()">Pick Random</button>
-            <button class="btn btn-pick" ng-show="recordId" ng-click="recordId=''">Reset</button>
-        </div>
     </div>
 
-    <!-- user list -->
+    <br>
+    <!-- Data Output area: -->
     <ul class="userlist cf">
         <!---------------------------->
         <!------ outer FOR-LOOP ------>
         <!---------------------------->
-        <li id=" ng-repeat= elem in dataSet1" ng-repeat="elem in dataSet1 | orderBy: order:direction | filter: {$id: recordId, $: query}">
+        <li id=" ng-repeat= elem in dataSet1"
+            ng-repeat="elem in dataSet1 | orderBy: order:direction | filter: {$id: recordId, $: query}">
             <div class="checkin">
                 <!-- data output -->
                 <div class="info">
