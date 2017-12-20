@@ -12,6 +12,16 @@ $lab-height5: 500px;
   background-color: $lab-ylight;
 }
 
+.L9-hero-img-centered {
+  position: absolute;
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 33%;
+}
+
 @media screen and (min-width: 768px) {
   .navbar {
     border-radius: 0;

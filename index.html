@@ -5,17 +5,22 @@
     <title>Lab 916</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Lab916">
 
     <!-- Vendor CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+    <!-- Unused Vendor CSS --
     <link href="vendor/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css">
     <link href="vendor/owl-carousel/owl.theme.css" rel="stylesheet" type="text/css">
     <link href="vendor/owl-carousel/owl.transitions.css" rel="stylesheet" type="text/css">
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
     <link href="vendor/formstone/background.css" rel="stylesheet" type="text/css">
+    -->
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="app/jdesign.css">
@@ -42,7 +47,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" ng-href="#!/home" ng-click="ccShowHero()">Lab916</a>
+            <a class="navbar-brand" ng-href="#!/home" ng-click="ccShowHero()">
+                <img src="img/logo-main.png" alt="logo"  class="img-responsive">
+            </a>
         </div>
 
         <form class="navbar-form navbar-left">
@@ -53,27 +60,31 @@
         </form>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <!-- future dashboard link for logged in users -->
+            <!-- future dashboard link for logged in users --
             <ul class="nav navbar-nav">
                 <li ng-click="ccHideHero()">
                     <a ng-href="#!/create">DASHBOARD</a>
                 </li>
             </ul>
+            -->
 
             <!-- Left side of nav -->
             <ul class="nav navbar-nav navbar-left">
                 <li ng-click="ccHideHero()">
-                    <a ng-href="#!/about-us">ABOUT US</a>
+                    <a ng-href="#!/about-us">WHY LAB916 </a>
                 </li>
                 <li ng-click="ccHideHero()">
-                    <a ng-href="#!/case-studies">CASE STUDIES</a>
+                    <a ng-href="#!/case-studies">SERVICES</a>
+                </li>
+                <li ng-click="ccHideHero()">
+                    <a ng-href="#!/contact-us">CASE STUDIES </a>
+                </li>
+                <li ng-click="ccHideHero()">
+                    <a ng-href="#!/contact-us">RESOURCES</a>
                 </li>
                 <li ng-click="ccHideHero()">
                     <!--<a href="http://lab916.wpengine.com">BLOG</a>-->
                     <a ng-href="#!/blog">BLOG</a>
-                </li>
-                <li ng-click="ccHideHero()">
-                    <a ng-href="#!/contact-us">CONTACT</a>
                 </li>
             </ul>
 
