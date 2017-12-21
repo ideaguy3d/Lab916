@@ -117,13 +117,14 @@ a {
     -moz-transition: all 0.5s;
     transition: all 0.5s;
 }
+
 a:hover,
 a:focus {
     color: inherit;
     text-decoration: none;
 }
 p {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.5;
 }
 p.lead {
@@ -170,7 +171,7 @@ hr.right {
 }
 
 hr.colored {
-    border-color: #eccf2f;
+    border-color: #939393;
 }
 
 @media (min-width: 768px) {
@@ -237,7 +238,8 @@ hr.colored {
     background-color: white;
     color: #222;
 }
-.navbar-default .navbar-brand,
+/*
+ .navbar-default .navbar-brand,
 .navbar-inverse .navbar-brand {
     color: #434343;
     opacity: 1;
@@ -250,6 +252,8 @@ hr.colored {
     text-transform: uppercase;
     font-size: 24px;
 }
+ */
+
 
 .navbar-default .navbar-brand:hover,
 .navbar-inverse .navbar-brand:hover,
@@ -335,7 +339,7 @@ header .brand-name {
 }
 
 header.lab-hero-landing {
-    background-image: url(../img/graph-bg.png);
+    background-image: url(../img/grad-bg.png);
     top: -55px;
 }
 
