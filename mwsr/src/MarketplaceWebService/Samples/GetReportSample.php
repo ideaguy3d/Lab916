@@ -22,7 +22,6 @@
 
 include_once('.config.inc.php');
 
-
 /************************************************************************
  * Uncomment to configure the client instance. Configuration settings
  * are:
@@ -162,4 +161,5 @@ function invokeGetReport(MarketplaceWebService_Interface $service, $request) {
     }
 }
 
+invokeGetReport($service, $request);
                                                                                 

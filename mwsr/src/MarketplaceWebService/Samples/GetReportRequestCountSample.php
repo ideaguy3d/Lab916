@@ -17,7 +17,7 @@
  */
 
 /**
- * Report  Sample
+ * Get Report Count  Sample
  */
 
 include_once ('.config.inc.php'); 
@@ -33,7 +33,7 @@ include_once ('.config.inc.php');
 // IMPORTANT: Uncomment the approiate line for the country you wish to
 // sell in:
 // United States:
-$serviceUrl = "https://mws.amazonservices.com";
+//$serviceUrl = "https://mws.amazonservices.com";
 // United Kingdom
 //$serviceUrl = "https://mws.amazonservices.co.uk";
 // Germany
@@ -86,92 +86,55 @@ $config = array (
 
 /************************************************************************
  * Setup request parameters and uncomment invoke to try out 
- * sample for Report Action
+ * sample for Get Report Count Action
  ***********************************************************************/
-// Constructing the MarketplaceId array which will be passed in as the the MarketplaceIdList 
-// parameter to the RequestReportRequest object.
-$marketplaceIdArray = array("Id" => array('<Marketplace_Id_1>','<Marketplace_Id_2>'));
-
- // @TODO: set request. Action can be passed as MarketplaceWebService_Model_ReportRequest
+ // @TODO: set request. Action can be passed as MarketplaceWebService_Model_GetReportRequestCountRequest
  // object or array of parameters
- 
-// $parameters = array (
-//   'Merchant' => MERCHANT_ID,
-//   'MarketplaceIdList' => $marketplaceIdArray,
-//   'ReportType' => '_GET_MERCHANT_LISTINGS_DATA_',
-//   'ReportOptions' => 'ShowSalesChannel=true',
-//   'MWSAuthToken' => '<MWS Auth Token>', // Optional
-// );
- 
-// $request = new MarketplaceWebService_Model_RequestReportRequest($parameters);
- 
-// $request = new MarketplaceWebService_Model_RequestReportRequest();
-// $request->setMarketplaceIdList($marketplaceIdArray);
-// $request->setMerchant(MERCHANT_ID);
-// $request->setReportType('_GET_MERCHANT_LISTINGS_DATA_');
-// $request->setMWSAuthToken('<MWS Auth Token>'); // Optional
 
-// Using ReportOptions
-// $request->setReportOptions('ShowSalesChannel=true');
- 
- invokeRequestReport($service, $request);
- 
+//$parameters = array (
+//  'Merchant' => MERCHANT_ID,
+//  'ReportProcessingStatusList' => array ('Status' => array ('_SUBMITTED_', '_DONE_')),
+//  'MWSAuthToken' => '<MWS Auth Token>', // Optional
+//);
+//
+//$request = new MarketplaceWebService_Model_GetReportRequestCountRequest($parameters);
+
+//$request = new MarketplaceWebService_Model_GetReportRequestCountRequest();
+//$request->setMerchant(MERCHANT_ID);
+//$request->setMWSAuthToken('<MWS Auth Token>'); // Optional
+//
+//$statusList = new MarketplaceWebService_Model_StatusList();
+//$request->setReportProcessingStatusList($statusList->withStatus('_SUBMITTED_', '_DONE_'));
+//     
+//invokeGetReportRequestCount($service, $request);
+
+                                            
 /**
-  * Get Report List Action Sample
-  * returns a list of reports; by default the most recent ten reports,
-  * regardless of their acknowledgement status
+  * Get Report Count Action Sample
+  * returns a count of reports matching your criteria;
+  * by default, the number of reports generated in the last 90 days,
+  * regardless of acknowledgement status
   *   
   * @param MarketplaceWebService_Interface $service instance of MarketplaceWebService_Interface
-  * @param mixed $request MarketplaceWebService_Model_GetReportList or array of parameters
+  * @param mixed $request MarketplaceWebService_Model_GetReportRequestCount or array of parameters
   */
-  function invokeRequestReport(MarketplaceWebService_Interface $service, $request) 
+  function invokeGetReportRequestCount(MarketplaceWebService_Interface $service, $request) 
   {
       try {
-              $response = $service->requestReport($request);
+              $response = $service->getReportRequestCount($request);
               
                 echo ("Service Response\n");
                 echo ("=============================================================================\n");
 
-                echo("        RequestReportResponse\n");
-                if ($response->isSetRequestReportResult()) { 
-                    echo("            RequestReportResult\n");
-                    $requestReportResult = $response->getRequestReportResult();
-                    
-                    if ($requestReportResult->isSetReportRequestInfo()) {
-                        
-                        $reportRequestInfo = $requestReportResult->getReportRequestInfo();
-                          echo("                ReportRequestInfo\n");
-                          if ($reportRequestInfo->isSetReportRequestId()) 
-                          {
-                              echo("                    ReportRequestId\n");
-                              echo("                        " . $reportRequestInfo->getReportRequestId() . "\n");
-                          }
-                          if ($reportRequestInfo->isSetReportType()) 
-                          {
-                              echo("                    ReportType\n");
-                              echo("                        " . $reportRequestInfo->getReportType() . "\n");
-                          }
-                          if ($reportRequestInfo->isSetStartDate()) 
-                          {
-                              echo("                    StartDate\n");
-                              echo("                        " . $reportRequestInfo->getStartDate()->format(DATE_FORMAT) . "\n");
-                          }
-                          if ($reportRequestInfo->isSetEndDate()) 
-                          {
-                              echo("                    EndDate\n");
-                              echo("                        " . $reportRequestInfo->getEndDate()->format(DATE_FORMAT) . "\n");
-                          }
-                          if ($reportRequestInfo->isSetSubmittedDate()) 
-                          {
-                              echo("                    SubmittedDate\n");
-                              echo("                        " . $reportRequestInfo->getSubmittedDate()->format(DATE_FORMAT) . "\n");
-                          }
-                          if ($reportRequestInfo->isSetReportProcessingStatus()) 
-                          {
-                              echo("                    ReportProcessingStatus\n");
-                              echo("                        " . $reportRequestInfo->getReportProcessingStatus() . "\n");
-                          }
-                      }
+                echo("        GetReportRequestCountResponse\n");
+                if ($response->isSetGetReportRequestCountResult()) { 
+                    echo("            GetReportRequestCountResult\n");
+                    $getReportRequestCountResult = $response->getGetReportRequestCountResult();
+                    if ($getReportRequestCountResult->isSetCount()) 
+                    {
+                        echo("                Count\n");
+                        echo("                    " . $getReportRequestCountResult->getCount() . "\n");
+                    }
                 } 
                 if ($response->isSetResponseMetadata()) { 
                     echo("            ResponseMetadata\n");
@@ -194,7 +157,4 @@ $marketplaceIdArray = array("Id" => array('<Marketplace_Id_1>','<Marketplace_Id_
          echo("ResponseHeaderMetadata: " . $ex->getResponseHeaderMetadata() . "\n");
      }
  }
- 
 ?>
-
-                                                                                

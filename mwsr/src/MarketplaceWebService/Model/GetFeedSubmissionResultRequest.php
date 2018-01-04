@@ -19,27 +19,28 @@
 /**
  *  @see MarketplaceWebService_Model
  */
-require_once ('../Model.php');
+require_once ('MarketplaceWebService/Model.php');  
+
     
 
 /**
- * MarketplaceWebService_Model_GetReportRequest
+ * MarketplaceWebService_Model_GetFeedSubmissionResultRequest
  * 
  * Properties:
  * <ul>
  * 
  * <li>Marketplace: string</li>
  * <li>Merchant: string</li>
- * <li>ReportId: string</li>
+ * <li>FeedSubmissionId: string</li>
  *
  * </ul>
  */ 
-class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService_Model
+class MarketplaceWebService_Model_GetFeedSubmissionResultRequest extends MarketplaceWebService_Model
 {
 
 
     /**
-     * Construct new MarketplaceWebService_Model_GetReportRequest
+     * Construct new MarketplaceWebService_Model_GetFeedSubmissionResultRequest
      * 
      * @param mixed $data DOMElement or Associative Array to construct from. 
      * 
@@ -48,7 +49,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * 
      * <li>Marketplace: string</li>
      * <li>Merchant: string</li>
-     * <li>ReportId: string</li>
+     * <li>FeedSubmissionId: string</li>
      *
      * </ul>
      */
@@ -58,8 +59,8 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
         'Marketplace' => array('FieldValue' => null, 'FieldType' => 'string'),
         'Merchant' => array('FieldValue' => null, 'FieldType' => 'string'),
         'MWSAuthToken' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'ReportId' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'Report' => array('FieldValue' => null, 'FieldType' => 'string'),
+        'FeedSubmissionId' => array('FieldValue' => null, 'FieldType' => 'string'),
+        'FeedSubmissionResult' => array ('FieldValue' => null, 'FieldType' => 'string'),
         );
         parent::__construct($data);
     }
@@ -90,7 +91,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the Marketplace and returns this instance
      * 
      * @param string $value Marketplace
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_GetFeedSubmissionResultRequest instance
      */
     public function withMarketplace($value)
     {
@@ -135,7 +136,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the Merchant and returns this instance
      * 
      * @param string $value Merchant
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_GetFeedSubmissionResultRequest instance
      */
     public function withMerchant($value)
     {
@@ -180,7 +181,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the MWSAuthToken and returns this instance
      *
      * @param string $value MWSAuthToken
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_GetFeedSubmissionResultRequest instance
      */
     public function withMWSAuthToken($value)
     {
@@ -200,97 +201,94 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
     }
 
     /**
-     * Gets the value of the ReportId property.
+     * Gets the value of the FeedSubmissionId property.
      * 
-     * @return string ReportId
+     * @return string FeedSubmissionId
      */
-    public function getReportId() 
+    public function getFeedSubmissionId() 
     {
-        return $this->fields['ReportId']['FieldValue'];
+        return $this->fields['FeedSubmissionId']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ReportId property.
+     * Sets the value of the FeedSubmissionId property.
      * 
-     * @param string ReportId
+     * @param string FeedSubmissionId
      * @return this instance
      */
-    public function setReportId($value) 
+    public function setFeedSubmissionId($value) 
     {
-        $this->fields['ReportId']['FieldValue'] = $value;
+        $this->fields['FeedSubmissionId']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the ReportId and returns this instance
+     * Sets the value of the FeedSubmissionId and returns this instance
      * 
-     * @param string $value ReportId
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @param string $value FeedSubmissionId
+     * @return MarketplaceWebService_Model_GetFeedSubmissionResultRequest instance
      */
-    public function withReportId($value)
+    public function withFeedSubmissionId($value)
     {
-        $this->setReportId($value);
+        $this->setFeedSubmissionId($value);
         return $this;
     }
 
 
     /**
-     * Checks if ReportId is set
+     * Checks if FeedSubmissionId is set
      * 
-     * @return bool true if ReportId  is set
+     * @return bool true if FeedSubmissionId  is set
      */
-    public function isSetReportId()
+    public function isSetFeedSubmissionId()
     {
-        return !is_null($this->fields['ReportId']['FieldValue']);
+        return !is_null($this->fields['FeedSubmissionId']['FieldValue']);
     }
 
-/* -0------------------------------------------------- */
-
-    /**
-     * Gets the value of the Report property.
+   /**
+     * Gets the value of the FeedSubmissionResult property.
      * 
-     * @return string Report
+     * @return string FeedSubmissionResult
      */
-    public function getReport() 
+    public function getFeedSubmissionResult() 
     {
-        return $this->fields['Report']['FieldValue'];
+        return $this->fields['FeedSubmissionResult']['FieldValue'];
     }
 
     /**
-     * Sets the value of the Report property.
+     * Sets the value of the FeedSubmissionResult property.
      * 
-     * @param string Report
+     * @param string FeedSubmissionResult
      * @return this instance
      */
-    public function setReport($value) 
+    public function setFeedSubmissionResult($value) 
     {
-        $this->fields['Report']['FieldValue'] = $value;
+        $this->fields['FeedSubmissionResult']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the Report and returns this instance
+     * Sets the value of the FeedSubmissionResult and returns this instance
      * 
-     * @param string $value Report
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @param string $value FeedSubmissionResult
+     * @return MarketplaceWebService_Model_GetFeedSubmissionResultRequest instance
      */
-    public function withReport($value)
+    public function withFeedSubmissionResult($value)
     {
-        $this->setReport($value);
+        $this->setFeedSubmissionResult($value);
         return $this;
     }
 
 
     /**
-     * Checks if Report is set
+     * Checks if FeedSubmissionResult is set
      * 
-     * @return bool true if Report  is set
+     * @return bool true if FeedSubmissionResult  is set
      */
-    public function isSetReport()
+    public function isFeedSubmissionResult()
     {
-        return !is_null($this->fields['Report']['FieldValue']);
+        return !is_null($this->fields['FeedSubmissionResult']['FieldValue']);
     }
-    
 
 
 }

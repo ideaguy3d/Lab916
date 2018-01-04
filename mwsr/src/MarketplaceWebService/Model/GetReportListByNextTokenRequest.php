@@ -19,27 +19,28 @@
 /**
  *  @see MarketplaceWebService_Model
  */
-require_once ('../Model.php');
+require_once ('MarketplaceWebService/Model.php');  
+
     
 
 /**
- * MarketplaceWebService_Model_GetReportRequest
+ * MarketplaceWebService_Model_GetReportListByNextTokenRequest
  * 
  * Properties:
  * <ul>
  * 
  * <li>Marketplace: string</li>
  * <li>Merchant: string</li>
- * <li>ReportId: string</li>
+ * <li>NextToken: string</li>
  *
  * </ul>
  */ 
-class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService_Model
+class MarketplaceWebService_Model_GetReportListByNextTokenRequest extends MarketplaceWebService_Model
 {
 
 
     /**
-     * Construct new MarketplaceWebService_Model_GetReportRequest
+     * Construct new MarketplaceWebService_Model_GetReportListByNextTokenRequest
      * 
      * @param mixed $data DOMElement or Associative Array to construct from. 
      * 
@@ -48,7 +49,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * 
      * <li>Marketplace: string</li>
      * <li>Merchant: string</li>
-     * <li>ReportId: string</li>
+     * <li>NextToken: string</li>
      *
      * </ul>
      */
@@ -58,8 +59,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
         'Marketplace' => array('FieldValue' => null, 'FieldType' => 'string'),
         'Merchant' => array('FieldValue' => null, 'FieldType' => 'string'),
         'MWSAuthToken' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'ReportId' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'Report' => array('FieldValue' => null, 'FieldType' => 'string'),
+        'NextToken' => array('FieldValue' => null, 'FieldType' => 'string'),
         );
         parent::__construct($data);
     }
@@ -90,7 +90,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the Marketplace and returns this instance
      * 
      * @param string $value Marketplace
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_GetReportListByNextTokenRequest instance
      */
     public function withMarketplace($value)
     {
@@ -135,7 +135,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the Merchant and returns this instance
      * 
      * @param string $value Merchant
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_GetReportListByNextTokenRequest instance
      */
     public function withMerchant($value)
     {
@@ -180,7 +180,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the MWSAuthToken and returns this instance
      *
      * @param string $value MWSAuthToken
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_GetReportListByNextTokenRequest instance
      */
     public function withMWSAuthToken($value)
     {
@@ -200,97 +200,51 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
     }
 
     /**
-     * Gets the value of the ReportId property.
+     * Gets the value of the NextToken property.
      * 
-     * @return string ReportId
+     * @return string NextToken
      */
-    public function getReportId() 
+    public function getNextToken() 
     {
-        return $this->fields['ReportId']['FieldValue'];
+        return $this->fields['NextToken']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ReportId property.
+     * Sets the value of the NextToken property.
      * 
-     * @param string ReportId
+     * @param string NextToken
      * @return this instance
      */
-    public function setReportId($value) 
+    public function setNextToken($value) 
     {
-        $this->fields['ReportId']['FieldValue'] = $value;
+        $this->fields['NextToken']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the ReportId and returns this instance
+     * Sets the value of the NextToken and returns this instance
      * 
-     * @param string $value ReportId
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @param string $value NextToken
+     * @return MarketplaceWebService_Model_GetReportListByNextTokenRequest instance
      */
-    public function withReportId($value)
+    public function withNextToken($value)
     {
-        $this->setReportId($value);
-        return $this;
-    }
-
-
-    /**
-     * Checks if ReportId is set
-     * 
-     * @return bool true if ReportId  is set
-     */
-    public function isSetReportId()
-    {
-        return !is_null($this->fields['ReportId']['FieldValue']);
-    }
-
-/* -0------------------------------------------------- */
-
-    /**
-     * Gets the value of the Report property.
-     * 
-     * @return string Report
-     */
-    public function getReport() 
-    {
-        return $this->fields['Report']['FieldValue'];
-    }
-
-    /**
-     * Sets the value of the Report property.
-     * 
-     * @param string Report
-     * @return this instance
-     */
-    public function setReport($value) 
-    {
-        $this->fields['Report']['FieldValue'] = $value;
-        return $this;
-    }
-
-    /**
-     * Sets the value of the Report and returns this instance
-     * 
-     * @param string $value Report
-     * @return MarketplaceWebService_Model_GetReportRequest instance
-     */
-    public function withReport($value)
-    {
-        $this->setReport($value);
+        $this->setNextToken($value);
         return $this;
     }
 
 
     /**
-     * Checks if Report is set
+     * Checks if NextToken is set
      * 
-     * @return bool true if Report  is set
+     * @return bool true if NextToken  is set
      */
-    public function isSetReport()
+    public function isSetNextToken()
     {
-        return !is_null($this->fields['Report']['FieldValue']);
+        return !is_null($this->fields['NextToken']['FieldValue']);
     }
-    
+
+
 
 
 }

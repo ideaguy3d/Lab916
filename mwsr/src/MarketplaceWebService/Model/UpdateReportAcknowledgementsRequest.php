@@ -19,27 +19,29 @@
 /**
  *  @see MarketplaceWebService_Model
  */
-require_once ('../Model.php');
+require_once ('MarketplaceWebService/Model.php');  
+
     
 
 /**
- * MarketplaceWebService_Model_GetReportRequest
+ * MarketplaceWebService_Model_UpdateReportAcknowledgementsRequest
  * 
  * Properties:
  * <ul>
  * 
  * <li>Marketplace: string</li>
  * <li>Merchant: string</li>
- * <li>ReportId: string</li>
+ * <li>ReportIdList: MarketplaceWebService_Model_IdList</li>
+ * <li>Acknowledged: bool</li>
  *
  * </ul>
  */ 
-class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService_Model
+class MarketplaceWebService_Model_UpdateReportAcknowledgementsRequest extends MarketplaceWebService_Model
 {
 
 
     /**
-     * Construct new MarketplaceWebService_Model_GetReportRequest
+     * Construct new MarketplaceWebService_Model_UpdateReportAcknowledgementsRequest
      * 
      * @param mixed $data DOMElement or Associative Array to construct from. 
      * 
@@ -48,7 +50,8 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * 
      * <li>Marketplace: string</li>
      * <li>Merchant: string</li>
-     * <li>ReportId: string</li>
+     * <li>ReportIdList: MarketplaceWebService_Model_IdList</li>
+     * <li>Acknowledged: bool</li>
      *
      * </ul>
      */
@@ -58,8 +61,8 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
         'Marketplace' => array('FieldValue' => null, 'FieldType' => 'string'),
         'Merchant' => array('FieldValue' => null, 'FieldType' => 'string'),
         'MWSAuthToken' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'ReportId' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'Report' => array('FieldValue' => null, 'FieldType' => 'string'),
+        'ReportIdList' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebService_Model_IdList'),
+        'Acknowledged' => array('FieldValue' => null, 'FieldType' => 'bool'),
         );
         parent::__construct($data);
     }
@@ -90,7 +93,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the Marketplace and returns this instance
      * 
      * @param string $value Marketplace
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_UpdateReportAcknowledgementsRequest instance
      */
     public function withMarketplace($value)
     {
@@ -135,7 +138,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the Merchant and returns this instance
      * 
      * @param string $value Merchant
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_UpdateReportAcknowledgementsRequest instance
      */
     public function withMerchant($value)
     {
@@ -180,7 +183,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the MWSAuthToken and returns this instance
      *
      * @param string $value MWSAuthToken
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_UpdateReportAcknowledgementsRequest instance
      */
     public function withMWSAuthToken($value)
     {
@@ -200,97 +203,97 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
     }
 
     /**
-     * Gets the value of the ReportId property.
+     * Gets the value of the ReportIdList.
      * 
-     * @return string ReportId
+     * @return IdList ReportIdList
      */
-    public function getReportId() 
+    public function getReportIdList() 
     {
-        return $this->fields['ReportId']['FieldValue'];
+        return $this->fields['ReportIdList']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ReportId property.
+     * Sets the value of the ReportIdList.
      * 
-     * @param string ReportId
+     * @param IdList ReportIdList
+     * @return void
+     */
+    public function setReportIdList($value) 
+    {
+        $this->fields['ReportIdList']['FieldValue'] = $value;
+        return;
+    }
+
+    /**
+     * Sets the value of the ReportIdList  and returns this instance
+     * 
+     * @param IdList $value ReportIdList
+     * @return MarketplaceWebService_Model_UpdateReportAcknowledgementsRequest instance
+     */
+    public function withReportIdList($value)
+    {
+        $this->setReportIdList($value);
+        return $this;
+    }
+
+
+    /**
+     * Checks if ReportIdList  is set
+     * 
+     * @return bool true if ReportIdList property is set
+     */
+    public function isSetReportIdList()
+    {
+        return !is_null($this->fields['ReportIdList']['FieldValue']);
+
+    }
+
+    /**
+     * Gets the value of the Acknowledged property.
+     * 
+     * @return bool Acknowledged
+     */
+    public function getAcknowledged() 
+    {
+        return $this->fields['Acknowledged']['FieldValue'];
+    }
+
+    /**
+     * Sets the value of the Acknowledged property.
+     * 
+     * @param bool Acknowledged
      * @return this instance
      */
-    public function setReportId($value) 
+    public function setAcknowledged($value) 
     {
-        $this->fields['ReportId']['FieldValue'] = $value;
+        $this->fields['Acknowledged']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the ReportId and returns this instance
+     * Sets the value of the Acknowledged and returns this instance
      * 
-     * @param string $value ReportId
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @param bool $value Acknowledged
+     * @return MarketplaceWebService_Model_UpdateReportAcknowledgementsRequest instance
      */
-    public function withReportId($value)
+    public function withAcknowledged($value)
     {
-        $this->setReportId($value);
-        return $this;
-    }
-
-
-    /**
-     * Checks if ReportId is set
-     * 
-     * @return bool true if ReportId  is set
-     */
-    public function isSetReportId()
-    {
-        return !is_null($this->fields['ReportId']['FieldValue']);
-    }
-
-/* -0------------------------------------------------- */
-
-    /**
-     * Gets the value of the Report property.
-     * 
-     * @return string Report
-     */
-    public function getReport() 
-    {
-        return $this->fields['Report']['FieldValue'];
-    }
-
-    /**
-     * Sets the value of the Report property.
-     * 
-     * @param string Report
-     * @return this instance
-     */
-    public function setReport($value) 
-    {
-        $this->fields['Report']['FieldValue'] = $value;
-        return $this;
-    }
-
-    /**
-     * Sets the value of the Report and returns this instance
-     * 
-     * @param string $value Report
-     * @return MarketplaceWebService_Model_GetReportRequest instance
-     */
-    public function withReport($value)
-    {
-        $this->setReport($value);
+        $this->setAcknowledged($value);
         return $this;
     }
 
 
     /**
-     * Checks if Report is set
+     * Checks if Acknowledged is set
      * 
-     * @return bool true if Report  is set
+     * @return bool true if Acknowledged  is set
      */
-    public function isSetReport()
+    public function isSetAcknowledged()
     {
-        return !is_null($this->fields['Report']['FieldValue']);
+        return !is_null($this->fields['Acknowledged']['FieldValue']);
     }
-    
+
+
 
 
 }

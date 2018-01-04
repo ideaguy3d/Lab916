@@ -33,7 +33,7 @@ include_once ('.config.inc.php');
 // IMPORTANT: Uncomment the approiate line for the country you wish to
 // sell in:
 // United States:
-$serviceUrl = "https://mws.amazonservices.com";
+//$serviceUrl = "https://mws.amazonservices.com";
 // United Kingdom
 //$serviceUrl = "https://mws.amazonservices.co.uk";
 // Germany

@@ -17,7 +17,7 @@
  */
 
 /**
- * Report  Sample
+ * Manage Report Schedule  Sample
  */
 
 include_once ('.config.inc.php'); 
@@ -33,7 +33,7 @@ include_once ('.config.inc.php');
 // IMPORTANT: Uncomment the approiate line for the country you wish to
 // sell in:
 // United States:
-$serviceUrl = "https://mws.amazonservices.com";
+//$serviceUrl = "https://mws.amazonservices.com";
 // United Kingdom
 //$serviceUrl = "https://mws.amazonservices.co.uk";
 // Germany
@@ -86,92 +86,75 @@ $config = array (
 
 /************************************************************************
  * Setup request parameters and uncomment invoke to try out 
- * sample for Report Action
+ * sample for Manage Report Schedule Action
  ***********************************************************************/
-// Constructing the MarketplaceId array which will be passed in as the the MarketplaceIdList 
-// parameter to the RequestReportRequest object.
-$marketplaceIdArray = array("Id" => array('<Marketplace_Id_1>','<Marketplace_Id_2>'));
-
- // @TODO: set request. Action can be passed as MarketplaceWebService_Model_ReportRequest
+ // @TODO: set request. Action can be passed as MarketplaceWebService_Model_ManageReportScheduleRequest
  // object or array of parameters
- 
-// $parameters = array (
-//   'Merchant' => MERCHANT_ID,
-//   'MarketplaceIdList' => $marketplaceIdArray,
-//   'ReportType' => '_GET_MERCHANT_LISTINGS_DATA_',
-//   'ReportOptions' => 'ShowSalesChannel=true',
-//   'MWSAuthToken' => '<MWS Auth Token>', // Optional
-// );
- 
-// $request = new MarketplaceWebService_Model_RequestReportRequest($parameters);
- 
-// $request = new MarketplaceWebService_Model_RequestReportRequest();
-// $request->setMarketplaceIdList($marketplaceIdArray);
-// $request->setMerchant(MERCHANT_ID);
-// $request->setReportType('_GET_MERCHANT_LISTINGS_DATA_');
-// $request->setMWSAuthToken('<MWS Auth Token>'); // Optional
 
-// Using ReportOptions
-// $request->setReportOptions('ShowSalesChannel=true');
- 
- invokeRequestReport($service, $request);
- 
+//$parameters = array (
+//  'Merchant' => MERCHANT_ID,
+//  'ReportType' => '_GET_ORDERS_DATA_',
+//  'Schedule' => '_1_HOUR_',
+//  'ScheduleDate' => new DateTime('now', new DateTimeZone('UTC')),
+//  'MWSAuthToken' => '<MWS Auth Token>', // Optional
+//);
+//
+//$request = new MarketplaceWebService_Model_ManageReportScheduleRequest($parameters);
+
+//$request = new MarketplaceWebService_Model_ManageReportScheduleRequest();
+//$request->setMerchant(MERCHANT_ID);
+//$request->setReportType('_GET_ORDERS_DATA_');
+//$request->setSchedule('_1_HOUR_');
+//$request->setScheduleDate(new DateTime('now', new DateTimeZone('UTC')));
+//$request->setMWSAuthToken('<MWS Auth Token>'); // Optional
+//
+//invokeManageReportSchedule($service, $request);
+
+                                                                                            
 /**
-  * Get Report List Action Sample
-  * returns a list of reports; by default the most recent ten reports,
-  * regardless of their acknowledgement status
+  * Manage Report Schedule Action Sample
+  * Creates, updates, or deletes a report schedule
+  * for a given report type, such as order reports in particular.
   *   
   * @param MarketplaceWebService_Interface $service instance of MarketplaceWebService_Interface
-  * @param mixed $request MarketplaceWebService_Model_GetReportList or array of parameters
+  * @param mixed $request MarketplaceWebService_Model_ManageReportSchedule or array of parameters
   */
-  function invokeRequestReport(MarketplaceWebService_Interface $service, $request) 
+  function invokeManageReportSchedule(MarketplaceWebService_Interface $service, $request) 
   {
       try {
-              $response = $service->requestReport($request);
+              $response = $service->manageReportSchedule($request);
               
                 echo ("Service Response\n");
                 echo ("=============================================================================\n");
 
-                echo("        RequestReportResponse\n");
-                if ($response->isSetRequestReportResult()) { 
-                    echo("            RequestReportResult\n");
-                    $requestReportResult = $response->getRequestReportResult();
-                    
-                    if ($requestReportResult->isSetReportRequestInfo()) {
-                        
-                        $reportRequestInfo = $requestReportResult->getReportRequestInfo();
-                          echo("                ReportRequestInfo\n");
-                          if ($reportRequestInfo->isSetReportRequestId()) 
-                          {
-                              echo("                    ReportRequestId\n");
-                              echo("                        " . $reportRequestInfo->getReportRequestId() . "\n");
-                          }
-                          if ($reportRequestInfo->isSetReportType()) 
-                          {
-                              echo("                    ReportType\n");
-                              echo("                        " . $reportRequestInfo->getReportType() . "\n");
-                          }
-                          if ($reportRequestInfo->isSetStartDate()) 
-                          {
-                              echo("                    StartDate\n");
-                              echo("                        " . $reportRequestInfo->getStartDate()->format(DATE_FORMAT) . "\n");
-                          }
-                          if ($reportRequestInfo->isSetEndDate()) 
-                          {
-                              echo("                    EndDate\n");
-                              echo("                        " . $reportRequestInfo->getEndDate()->format(DATE_FORMAT) . "\n");
-                          }
-                          if ($reportRequestInfo->isSetSubmittedDate()) 
-                          {
-                              echo("                    SubmittedDate\n");
-                              echo("                        " . $reportRequestInfo->getSubmittedDate()->format(DATE_FORMAT) . "\n");
-                          }
-                          if ($reportRequestInfo->isSetReportProcessingStatus()) 
-                          {
-                              echo("                    ReportProcessingStatus\n");
-                              echo("                        " . $reportRequestInfo->getReportProcessingStatus() . "\n");
-                          }
-                      }
+                echo("        ManageReportScheduleResponse\n");
+                if ($response->isSetManageReportScheduleResult()) { 
+                    echo("            ManageReportScheduleResult\n");
+                    $manageReportScheduleResult = $response->getManageReportScheduleResult();
+                    if ($manageReportScheduleResult->isSetCount()) 
+                    {
+                        echo("                Count\n");
+                        echo("                    " . $manageReportScheduleResult->getCount() . "\n");
+                    }
+                    $reportScheduleList = $manageReportScheduleResult->getReportScheduleList();
+                    foreach ($reportScheduleList as $reportSchedule) {
+                        echo("                ReportSchedule\n");
+                        if ($reportSchedule->isSetReportType()) 
+                        {
+                            echo("                    ReportType\n");
+                            echo("                        " . $reportSchedule->getReportType() . "\n");
+                        }
+                        if ($reportSchedule->isSetSchedule()) 
+                        {
+                            echo("                    Schedule\n");
+                            echo("                        " . $reportSchedule->getSchedule() . "\n");
+                        }
+                        if ($reportSchedule->isSetScheduledDate()) 
+                        {
+                            echo("                    ScheduledDate\n");
+                            echo("                        " . $reportSchedule->getScheduledDate()->format(DATE_FORMAT) . "\n");
+                        }
+                    }
                 } 
                 if ($response->isSetResponseMetadata()) { 
                     echo("            ResponseMetadata\n");
@@ -194,7 +177,4 @@ $marketplaceIdArray = array("Id" => array('<Marketplace_Id_1>','<Marketplace_Id_
          echo("ResponseHeaderMetadata: " . $ex->getResponseHeaderMetadata() . "\n");
      }
  }
- 
-?>
-
-                                                                                
+            

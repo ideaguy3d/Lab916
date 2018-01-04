@@ -32,7 +32,7 @@ require_once('.config.inc.php');
  ***********************************************************************/
 // More endpoints are listed in the MWS Developer Guide
 // North America:
-//$serviceUrl = "https://mws.amazonservices.com/Sellers/2011-07-01";
+$serviceUrl = "https://mws.amazonservices.com/Sellers/2011-07-01";
 // Europe
 //$serviceUrl = "https://mws-eu.amazonservices.com/Sellers/2011-07-01";
 // Japan
@@ -67,7 +67,7 @@ require_once('.config.inc.php');
  * XML files available under MarketplaceWebServiceSellers/Mock tree
  *
  ***********************************************************************/
- // $service = new MarketplaceWebServiceSellers_Mock();
+ $service = new MarketplaceWebServiceSellers_Mock();
 
 /************************************************************************
  * Setup request parameters and uncomment invoke to try out
@@ -88,8 +88,7 @@ require_once('.config.inc.php');
   * @param mixed $request MarketplaceWebServiceSellers_Model_ListMarketplaceParticipations or array of parameters
   */
 
-  function invokeListMarketplaceParticipations(MarketplaceWebServiceSellers_Interface $service, $request)
-  {
+  function invokeListMarketplaceParticipations(MarketplaceWebServiceSellers_Interface $service, $request) {
       try {
         $response = $service->ListMarketplaceParticipations($request);
 

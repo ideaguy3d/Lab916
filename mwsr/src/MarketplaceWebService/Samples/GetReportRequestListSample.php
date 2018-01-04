@@ -17,7 +17,7 @@
  */
 
 /**
- * Report  Sample
+ * Get Report Request List Sample
  */
 
 include_once ('.config.inc.php'); 
@@ -33,7 +33,7 @@ include_once ('.config.inc.php');
 // IMPORTANT: Uncomment the approiate line for the country you wish to
 // sell in:
 // United States:
-$serviceUrl = "https://mws.amazonservices.com";
+//$serviceUrl = "https://mws.amazonservices.com";
 // United Kingdom
 //$serviceUrl = "https://mws.amazonservices.co.uk";
 // Germany
@@ -86,36 +86,24 @@ $config = array (
 
 /************************************************************************
  * Setup request parameters and uncomment invoke to try out 
- * sample for Report Action
+ * sample for Get Report List Action
  ***********************************************************************/
-// Constructing the MarketplaceId array which will be passed in as the the MarketplaceIdList 
-// parameter to the RequestReportRequest object.
-$marketplaceIdArray = array("Id" => array('<Marketplace_Id_1>','<Marketplace_Id_2>'));
-
- // @TODO: set request. Action can be passed as MarketplaceWebService_Model_ReportRequest
+ // @TODO: set request. Action can be passed as MarketplaceWebService_Model_GetReportListRequest
  // object or array of parameters
  
 // $parameters = array (
 //   'Merchant' => MERCHANT_ID,
-//   'MarketplaceIdList' => $marketplaceIdArray,
-//   'ReportType' => '_GET_MERCHANT_LISTINGS_DATA_',
-//   'ReportOptions' => 'ShowSalesChannel=true',
 //   'MWSAuthToken' => '<MWS Auth Token>', // Optional
 // );
+// $request = new MarketplaceWebService_Model_GetReportRequestListRequest($parameters);
  
-// $request = new MarketplaceWebService_Model_RequestReportRequest($parameters);
- 
-// $request = new MarketplaceWebService_Model_RequestReportRequest();
-// $request->setMarketplaceIdList($marketplaceIdArray);
-// $request->setMerchant(MERCHANT_ID);
-// $request->setReportType('_GET_MERCHANT_LISTINGS_DATA_');
-// $request->setMWSAuthToken('<MWS Auth Token>'); // Optional
+//$request = new MarketplaceWebService_Model_GetReportRequestListRequest();
+//$request->setMerchant(MERCHANT_ID);
+//$request->setMWSAuthToken('<MWS Auth Token>'); // Optional
+// 
+//invokeGetReportRequestList($service, $request);
 
-// Using ReportOptions
-// $request->setReportOptions('ShowSalesChannel=true');
- 
- invokeRequestReport($service, $request);
- 
+                                                                    
 /**
   * Get Report List Action Sample
   * returns a list of reports; by default the most recent ten reports,
@@ -124,24 +112,32 @@ $marketplaceIdArray = array("Id" => array('<Marketplace_Id_1>','<Marketplace_Id_
   * @param MarketplaceWebService_Interface $service instance of MarketplaceWebService_Interface
   * @param mixed $request MarketplaceWebService_Model_GetReportList or array of parameters
   */
-  function invokeRequestReport(MarketplaceWebService_Interface $service, $request) 
+  function invokeGetReportRequestList(MarketplaceWebService_Interface $service, $request) 
   {
       try {
-              $response = $service->requestReport($request);
+              $response = $service->getReportRequestList($request);
               
                 echo ("Service Response\n");
                 echo ("=============================================================================\n");
 
-                echo("        RequestReportResponse\n");
-                if ($response->isSetRequestReportResult()) { 
-                    echo("            RequestReportResult\n");
-                    $requestReportResult = $response->getRequestReportResult();
-                    
-                    if ($requestReportResult->isSetReportRequestInfo()) {
-                        
-                        $reportRequestInfo = $requestReportResult->getReportRequestInfo();
-                          echo("                ReportRequestInfo\n");
-                          if ($reportRequestInfo->isSetReportRequestId()) 
+                echo("        GetReportRequestListResponse\n");
+                if ($response->isSetGetReportRequestListResult()) { 
+                    echo("            GetReportRequestListResult\n");
+                    $getReportRequestListResult = $response->getGetReportRequestListResult();
+                    if ($getReportRequestListResult->isSetNextToken()) 
+                    {
+                        echo("                NextToken\n");
+                        echo("                    " . $getReportRequestListResult->getNextToken() . "\n");
+                    }
+                    if ($getReportRequestListResult->isSetHasNext()) 
+                    {
+                        echo("                HasNext\n");
+                        echo("                    " . $getReportRequestListResult->getHasNext() . "\n");
+                    }
+                    $reportRequestInfoList = $getReportRequestListResult->getReportRequestInfoList();
+                    foreach ($reportRequestInfoList as $reportRequestInfo) {
+                        echo("                ReportRequestInfo\n");
+                    if ($reportRequestInfo->isSetReportRequestId()) 
                           {
                               echo("                    ReportRequestId\n");
                               echo("                        " . $reportRequestInfo->getReportRequestId() . "\n");
@@ -161,6 +157,13 @@ $marketplaceIdArray = array("Id" => array('<Marketplace_Id_1>','<Marketplace_Id_
                               echo("                    EndDate\n");
                               echo("                        " . $reportRequestInfo->getEndDate()->format(DATE_FORMAT) . "\n");
                           }
+                          // add start
+                          if ($reportRequestInfo->isSetScheduled()) 
+                          {
+                              echo("                    Scheduled\n");
+                              echo("                        " . $reportRequestInfo->getScheduled() . "\n");
+                          }
+                          // add end
                           if ($reportRequestInfo->isSetSubmittedDate()) 
                           {
                               echo("                    SubmittedDate\n");
@@ -171,7 +174,25 @@ $marketplaceIdArray = array("Id" => array('<Marketplace_Id_1>','<Marketplace_Id_
                               echo("                    ReportProcessingStatus\n");
                               echo("                        " . $reportRequestInfo->getReportProcessingStatus() . "\n");
                           }
-                      }
+                          // add start
+                          if ($reportRequestInfo->isSetGeneratedReportId()) 
+                          {
+                              echo("                    GeneratedReportId\n");
+                              echo("                        " . $reportRequestInfo->getGeneratedReportId() . "\n");
+                          }
+                          if ($reportRequestInfo->isSetStartedProcessingDate()) 
+                          {
+                              echo("                    StartedProcessingDate\n");
+                              echo("                        " . $reportRequestInfo->getStartedProcessingDate()->format(DATE_FORMAT) . "\n");
+                          }
+                          if ($reportRequestInfo->isSetCompletedDate()) 
+                          {
+                              echo("                    CompletedDate\n");
+                              echo("                        " . $reportRequestInfo->getCompletedDate()->format(DATE_FORMAT) . "\n");
+                          }
+                          // add end
+                          
+                    }
                 } 
                 if ($response->isSetResponseMetadata()) { 
                     echo("            ResponseMetadata\n");
@@ -194,7 +215,4 @@ $marketplaceIdArray = array("Id" => array('<Marketplace_Id_1>','<Marketplace_Id_
          echo("ResponseHeaderMetadata: " . $ex->getResponseHeaderMetadata() . "\n");
      }
  }
- 
-?>
-
-                                                                                
+ ?>

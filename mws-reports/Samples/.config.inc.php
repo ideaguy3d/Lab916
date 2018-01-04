@@ -14,8 +14,8 @@
     * to anyone. It is important to keep your Secret Access Key confidential
     * to protect your account.
     ***********************************************************************/
-    define('AWS_ACCESS_KEY_ID', '<Your Access Key ID>');
-    define('AWS_SECRET_ACCESS_KEY', '<Your Secret Access Key>');
+    define('AWS_ACCESS_KEY_ID', 'AKIAIHWRIP2GWFFLLRBQ');
+    define('AWS_SECRET_ACCESS_KEY', 'G4jOLHApvafsHjEkBb//3OMJ65OLto+1MUmj1ONn');
 
    /************************************************************************
     * REQUIRED
@@ -23,8 +23,8 @@
     * All MWS requests must contain a User-Agent header. The application
     * name and version defined below are used in creating this value.
     ***********************************************************************/
-    define('APPLICATION_NAME', '<Your Application Name>');
-    define('APPLICATION_VERSION', '<Your Application Version or Build Number>');
+    define('APPLICATION_NAME', 'L9prac1');
+    define('APPLICATION_VERSION', '0.0.0');
     
    /************************************************************************
     * REQUIRED
@@ -32,7 +32,7 @@
     * All MWS requests must contain the seller's merchant ID and
     * marketplace ID.
     ***********************************************************************/
-    define ('MERCHANT_ID', '<Your Merchant ID>');
+    define ('MERCHANT_ID', 'AP8E9QUPPRI7');
     
    /************************************************************************ 
     * OPTIONAL ON SOME INSTALLATIONS
@@ -40,13 +40,14 @@
     * Set include path to root of library, relative to Samples directory.
     * Only needed when running library from local directory.
     * If library is installed in PHP include path, this is not needed
-    ***********************************************************************/   
-    set_include_path(get_include_path() . PATH_SEPARATOR . '../../.');    
+    ***********************************************************************/
+   // echo get_include_path() . PATH_SEPARATOR . '../';
+    set_include_path('../');
     
    /************************************************************************ 
     * OPTIONAL ON SOME INSTALLATIONS  
     * 
-    * Autoload function is reponsible for loading classes of the library on demand
+    * Autoload function is responsible for loading classes of the library on demand
     * 
     * NOTE: Only one __autoload function is allowed by PHP per each PHP installation,
     * and this function may need to be replaced with individual require_once statements

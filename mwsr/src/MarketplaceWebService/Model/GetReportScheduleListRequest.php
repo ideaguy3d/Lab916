@@ -19,27 +19,28 @@
 /**
  *  @see MarketplaceWebService_Model
  */
-require_once ('../Model.php');
+require_once ('MarketplaceWebService/Model.php');  
+
     
 
 /**
- * MarketplaceWebService_Model_GetReportRequest
+ * MarketplaceWebService_Model_GetReportScheduleListRequest
  * 
  * Properties:
  * <ul>
  * 
  * <li>Marketplace: string</li>
  * <li>Merchant: string</li>
- * <li>ReportId: string</li>
+ * <li>ReportTypeList: MarketplaceWebService_Model_TypeList</li>
  *
  * </ul>
  */ 
-class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService_Model
+class MarketplaceWebService_Model_GetReportScheduleListRequest extends MarketplaceWebService_Model
 {
 
 
     /**
-     * Construct new MarketplaceWebService_Model_GetReportRequest
+     * Construct new MarketplaceWebService_Model_GetReportScheduleListRequest
      * 
      * @param mixed $data DOMElement or Associative Array to construct from. 
      * 
@@ -48,7 +49,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * 
      * <li>Marketplace: string</li>
      * <li>Merchant: string</li>
-     * <li>ReportId: string</li>
+     * <li>ReportTypeList: MarketplaceWebService_Model_TypeList</li>
      *
      * </ul>
      */
@@ -58,8 +59,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
         'Marketplace' => array('FieldValue' => null, 'FieldType' => 'string'),
         'Merchant' => array('FieldValue' => null, 'FieldType' => 'string'),
         'MWSAuthToken' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'ReportId' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'Report' => array('FieldValue' => null, 'FieldType' => 'string'),
+        'ReportTypeList' => array('FieldValue' => null, 'FieldType' => 'MarketplaceWebService_Model_TypeList'),
         );
         parent::__construct($data);
     }
@@ -90,7 +90,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the Marketplace and returns this instance
      * 
      * @param string $value Marketplace
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_GetReportScheduleListRequest instance
      */
     public function withMarketplace($value)
     {
@@ -135,7 +135,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the Merchant and returns this instance
      * 
      * @param string $value Merchant
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_GetReportScheduleListRequest instance
      */
     public function withMerchant($value)
     {
@@ -180,7 +180,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the MWSAuthToken and returns this instance
      *
      * @param string $value MWSAuthToken
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_GetReportScheduleListRequest instance
      */
     public function withMWSAuthToken($value)
     {
@@ -200,97 +200,52 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
     }
 
     /**
-     * Gets the value of the ReportId property.
+     * Gets the value of the ReportTypeList.
      * 
-     * @return string ReportId
+     * @return TypeList ReportTypeList
      */
-    public function getReportId() 
+    public function getReportTypeList() 
     {
-        return $this->fields['ReportId']['FieldValue'];
+        return $this->fields['ReportTypeList']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ReportId property.
+     * Sets the value of the ReportTypeList.
      * 
-     * @param string ReportId
-     * @return this instance
+     * @param TypeList ReportTypeList
+     * @return void
      */
-    public function setReportId($value) 
+    public function setReportTypeList($value) 
     {
-        $this->fields['ReportId']['FieldValue'] = $value;
-        return $this;
+        $this->fields['ReportTypeList']['FieldValue'] = $value;
+        return;
     }
 
     /**
-     * Sets the value of the ReportId and returns this instance
+     * Sets the value of the ReportTypeList  and returns this instance
      * 
-     * @param string $value ReportId
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @param TypeList $value ReportTypeList
+     * @return MarketplaceWebService_Model_GetReportScheduleListRequest instance
      */
-    public function withReportId($value)
+    public function withReportTypeList($value)
     {
-        $this->setReportId($value);
-        return $this;
-    }
-
-
-    /**
-     * Checks if ReportId is set
-     * 
-     * @return bool true if ReportId  is set
-     */
-    public function isSetReportId()
-    {
-        return !is_null($this->fields['ReportId']['FieldValue']);
-    }
-
-/* -0------------------------------------------------- */
-
-    /**
-     * Gets the value of the Report property.
-     * 
-     * @return string Report
-     */
-    public function getReport() 
-    {
-        return $this->fields['Report']['FieldValue'];
-    }
-
-    /**
-     * Sets the value of the Report property.
-     * 
-     * @param string Report
-     * @return this instance
-     */
-    public function setReport($value) 
-    {
-        $this->fields['Report']['FieldValue'] = $value;
-        return $this;
-    }
-
-    /**
-     * Sets the value of the Report and returns this instance
-     * 
-     * @param string $value Report
-     * @return MarketplaceWebService_Model_GetReportRequest instance
-     */
-    public function withReport($value)
-    {
-        $this->setReport($value);
+        $this->setReportTypeList($value);
         return $this;
     }
 
 
     /**
-     * Checks if Report is set
+     * Checks if ReportTypeList  is set
      * 
-     * @return bool true if Report  is set
+     * @return bool true if ReportTypeList property is set
      */
-    public function isSetReport()
+    public function isSetReportTypeList()
     {
-        return !is_null($this->fields['Report']['FieldValue']);
+        return !is_null($this->fields['ReportTypeList']['FieldValue']);
+
     }
-    
+
+
 
 
 }

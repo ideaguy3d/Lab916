@@ -19,27 +19,30 @@
 /**
  *  @see MarketplaceWebService_Model
  */
-require_once ('../Model.php');
+require_once ('MarketplaceWebService/Model.php');  
+
     
 
 /**
- * MarketplaceWebService_Model_GetReportRequest
+ * MarketplaceWebService_Model_ManageReportScheduleRequest
  * 
  * Properties:
  * <ul>
  * 
  * <li>Marketplace: string</li>
  * <li>Merchant: string</li>
- * <li>ReportId: string</li>
+ * <li>ReportType: string</li>
+ * <li>Schedule: string</li>
+ * <li>ScheduleDate: string</li>
  *
  * </ul>
  */ 
-class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService_Model
+class MarketplaceWebService_Model_ManageReportScheduleRequest extends MarketplaceWebService_Model
 {
 
 
     /**
-     * Construct new MarketplaceWebService_Model_GetReportRequest
+     * Construct new MarketplaceWebService_Model_ManageReportScheduleRequest
      * 
      * @param mixed $data DOMElement or Associative Array to construct from. 
      * 
@@ -48,7 +51,9 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * 
      * <li>Marketplace: string</li>
      * <li>Merchant: string</li>
-     * <li>ReportId: string</li>
+     * <li>ReportType: string</li>
+     * <li>Schedule: string</li>
+     * <li>ScheduleDate: string</li>
      *
      * </ul>
      */
@@ -58,8 +63,9 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
         'Marketplace' => array('FieldValue' => null, 'FieldType' => 'string'),
         'Merchant' => array('FieldValue' => null, 'FieldType' => 'string'),
         'MWSAuthToken' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'ReportId' => array('FieldValue' => null, 'FieldType' => 'string'),
-        'Report' => array('FieldValue' => null, 'FieldType' => 'string'),
+        'ReportType' => array('FieldValue' => null, 'FieldType' => 'string'),
+        'Schedule' => array('FieldValue' => null, 'FieldType' => 'string'),
+        'ScheduleDate' => array('FieldValue' => null, 'FieldType' => 'DateTime'),
         );
         parent::__construct($data);
     }
@@ -90,7 +96,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the Marketplace and returns this instance
      * 
      * @param string $value Marketplace
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_ManageReportScheduleRequest instance
      */
     public function withMarketplace($value)
     {
@@ -135,7 +141,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the Merchant and returns this instance
      * 
      * @param string $value Merchant
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_ManageReportScheduleRequest instance
      */
     public function withMerchant($value)
     {
@@ -180,7 +186,7 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
      * Sets the value of the MWSAuthToken and returns this instance
      *
      * @param string $value MWSAuthToken
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @return MarketplaceWebService_Model_ManageReportScheduleRequest instance
      */
     public function withMWSAuthToken($value)
     {
@@ -200,97 +206,141 @@ class MarketplaceWebService_Model_GetReportRequest extends MarketplaceWebService
     }
 
     /**
-     * Gets the value of the ReportId property.
+     * Gets the value of the ReportType property.
      * 
-     * @return string ReportId
+     * @return string ReportType
      */
-    public function getReportId() 
+    public function getReportType() 
     {
-        return $this->fields['ReportId']['FieldValue'];
+        return $this->fields['ReportType']['FieldValue'];
     }
 
     /**
-     * Sets the value of the ReportId property.
+     * Sets the value of the ReportType property.
      * 
-     * @param string ReportId
+     * @param string ReportType
      * @return this instance
      */
-    public function setReportId($value) 
+    public function setReportType($value) 
     {
-        $this->fields['ReportId']['FieldValue'] = $value;
+        $this->fields['ReportType']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the ReportId and returns this instance
+     * Sets the value of the ReportType and returns this instance
      * 
-     * @param string $value ReportId
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @param string $value ReportType
+     * @return MarketplaceWebService_Model_ManageReportScheduleRequest instance
      */
-    public function withReportId($value)
+    public function withReportType($value)
     {
-        $this->setReportId($value);
+        $this->setReportType($value);
         return $this;
     }
 
 
     /**
-     * Checks if ReportId is set
+     * Checks if ReportType is set
      * 
-     * @return bool true if ReportId  is set
+     * @return bool true if ReportType  is set
      */
-    public function isSetReportId()
+    public function isSetReportType()
     {
-        return !is_null($this->fields['ReportId']['FieldValue']);
-    }
-
-/* -0------------------------------------------------- */
-
-    /**
-     * Gets the value of the Report property.
-     * 
-     * @return string Report
-     */
-    public function getReport() 
-    {
-        return $this->fields['Report']['FieldValue'];
+        return !is_null($this->fields['ReportType']['FieldValue']);
     }
 
     /**
-     * Sets the value of the Report property.
+     * Gets the value of the Schedule property.
      * 
-     * @param string Report
+     * @return string Schedule
+     */
+    public function getSchedule() 
+    {
+        return $this->fields['Schedule']['FieldValue'];
+    }
+
+    /**
+     * Sets the value of the Schedule property.
+     * 
+     * @param string Schedule
      * @return this instance
      */
-    public function setReport($value) 
+    public function setSchedule($value) 
     {
-        $this->fields['Report']['FieldValue'] = $value;
+        $this->fields['Schedule']['FieldValue'] = $value;
         return $this;
     }
 
     /**
-     * Sets the value of the Report and returns this instance
+     * Sets the value of the Schedule and returns this instance
      * 
-     * @param string $value Report
-     * @return MarketplaceWebService_Model_GetReportRequest instance
+     * @param string $value Schedule
+     * @return MarketplaceWebService_Model_ManageReportScheduleRequest instance
      */
-    public function withReport($value)
+    public function withSchedule($value)
     {
-        $this->setReport($value);
+        $this->setSchedule($value);
         return $this;
     }
 
 
     /**
-     * Checks if Report is set
+     * Checks if Schedule is set
      * 
-     * @return bool true if Report  is set
+     * @return bool true if Schedule  is set
      */
-    public function isSetReport()
+    public function isSetSchedule()
     {
-        return !is_null($this->fields['Report']['FieldValue']);
+        return !is_null($this->fields['Schedule']['FieldValue']);
     }
-    
+
+    /**
+     * Gets the value of the ScheduleDate property.
+     * 
+     * @return string ScheduleDate
+     */
+    public function getScheduleDate() 
+    {
+        return $this->fields['ScheduleDate']['FieldValue'];
+    }
+
+    /**
+     * Sets the value of the ScheduleDate property.
+     * 
+     * @param string ScheduleDate
+     * @return this instance
+     */
+    public function setScheduleDate($value) 
+    {
+        $this->fields['ScheduleDate']['FieldValue'] = $value;
+        return $this;
+    }
+
+    /**
+     * Sets the value of the ScheduleDate and returns this instance
+     * 
+     * @param string $value ScheduleDate
+     * @return MarketplaceWebService_Model_ManageReportScheduleRequest instance
+     */
+    public function withScheduleDate($value)
+    {
+        $this->setScheduleDate($value);
+        return $this;
+    }
+
+
+    /**
+     * Checks if ScheduleDate is set
+     * 
+     * @return bool true if ScheduleDate  is set
+     */
+    public function isSetScheduleDate()
+    {
+        return !is_null($this->fields['ScheduleDate']['FieldValue']);
+    }
+
+
 
 
 }
